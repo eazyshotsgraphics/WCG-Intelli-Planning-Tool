@@ -1,16 +1,50 @@
-# React + Vite
+# WCG Intelli-Planning Tool
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Interactive React + Leaflet tool for planning and analysis across Western Cape datasets (schools, hospitals, broadband, etc.).  
+Built with **Vite**, **React**, **Tailwind CSS**, and **react-leaflet**.
 
-Currently, two official plugins are available:
+## ✨ Features
+- Interactive map with **separate clustering** for Schools and Hospitals
+- Custom marker **icons** and rich **popups**
+- Toggleable **LayersControl** (Hospitals, Schools)
+- **Legend** control with icon previews
+- Tailwind-powered UI and clean layout
+- Ready to plug into real data sources later (currently uses public GeoJSONs)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧱 Tech Stack
+- React 18 + Vite
+- Tailwind CSS
+- Leaflet + react-leaflet
+- (Optional) Heatmap / analytics via custom layers
 
-## React Compiler
-
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📦 Project Structure
+intelli-planner/
+├─ public/
+│ ├─ hospitals.geojson
+│ ├─ Public_Ordinary_Schools.geojson
+│ └─ Western_Cape_Government_Broadband_Sites.geojson (optional)
+├─ src/
+│ ├─ components/
+│ │ ├─ GeoJSONLayer.jsx
+│ │ ├─ HeatmapLayer.jsx
+│ │ ├─ Legend.jsx
+│ │ ├─ MapView.jsx
+│ │ ├─ MarkersFromGeoJSON.jsx
+│ │ ├─ Navbar.jsx
+│ │ ├─ SchoolTable.jsx
+│ │ ├─ StatsCard.jsx
+│ │ └─ StatsPanel.jsx
+│ ├─ pages/
+│ │ ├─ Home.jsx
+│ │ ├─ Planner.jsx
+│ │ └─ Stats.jsx
+│ ├─ services/
+│ │ └─ dataService.js
+│ ├─ App.jsx
+│ ├─ index.css
+│ └─ main.jsx
+├─ index.html
+├─ package.json
+├─ postcss.config.js
+├─ tailwind.config.js
+└─ vite.config.js
